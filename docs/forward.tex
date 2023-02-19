@@ -1,0 +1,17 @@
+q(x_{t}|x_{t-1}) \sim \mathcal{N}(\sqrt{\alpha_{t}},\,1 - \alpha_{t}) \\\\
+
+x_{t} = \sqrt{\alpha_{t}} x_{t-1} + \sqrt{1 - \alpha_{t}}\epsilon \ (Reparametrization \ trick) \\\\
+
+x_{t} = \sqrt{\alpha_{t}} (\sqrt{\alpha_{t-1}} x_{t-2} + \sqrt{1 - \alpha_{t-1}}\epsilon) + \sqrt{1 - \alpha_{t}} \epsilon \\\\
+
+x_{t} = \sqrt{\alpha_{t} \alpha_{t-1}} x_{t-2} + \sqrt{\alpha_{t} - \alpha_{t} \alpha_{t-1} + 1 - \alpha_{t}} \epsilon \\\\
+
+x_{t} = \sqrt{\alpha_{t} \alpha_{t-1}} x_{t-2} + \sqrt{1 - \alpha_{t} \alpha_{t-1}} \epsilon \\\\
+
+\cdots \\\\
+
+x_{t} = \sqrt{\alpha_{t} \alpha_{t-1} \ldots \alpha_{1}} x_{0} + \sqrt{1 - \alpha_{t} \alpha_{t-1} \ldots \alpha_{1}} \epsilon \\\\
+
+x_{t} = \sqrt{\bar{\alpha_{t}}} x_{0} + \sqrt{1 - \bar{\alpha_{t}}} \epsilon \\\\
+
+q(x_{t}|x_{0}) \sim \mathcal{N}(\sqrt{\bar{\alpha_{t}}},\,1 - \bar{\alpha_{t}})
